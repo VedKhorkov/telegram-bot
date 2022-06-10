@@ -1,11 +1,13 @@
 const TelegramBotApi = require('node-telegram-bot-api')
-const token = '5590337615:AAGuKly8WZvfZffqMbPP-UDjGXZdK4b5JOk'
+const os = require('os')
+const token = ''
 
 const bot = new TelegramBotApi(token, { polling: true })
 bot.on('message', (msg) => {
   const chatId = msg.chat.id
   const text = msg.text
   console.log(msg);
+  console.log(os.type());
 
 
   if (text === '/start') {
